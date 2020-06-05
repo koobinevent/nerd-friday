@@ -43,54 +43,54 @@ type Query {
 
 2. The `Team` and `Player` information will be the following:
 
-For the team:
+    For the team:
 
-```json
+    ```json
 
-{
-    "id": 18,
-    "name": "Borussia Mönchengladbach",
-    "shortName": "M'gladbach",
-    "tla": "BMG",
-    "address": "Hennes-Weisweiler-Allee 1 Mönchengladbach 41179",
-    "phone": "+49 (02161) 92930",
-    "website": "http://www.borussia.de",
-    "email": "info@borussia.de",
-    "founded": 1900,
-    "clubColors": "Black / White / Green",
-    "venue": null,
-    "squad": [
-        {
-            "id": 3176,
-            "name": "Matthias Ginter",
-            "position": "Defender",
-            "dateOfBirth": "1994-01-03T00:00:00Z",
-            "countryOfBirth": "Germany",
-            "nationality": "Germany",
-            "role": "PLAYER"
-        }
-    ],
-    "lastUpdated": "2018-05-31T12:49:47Z"
-}
-```
+    {
+        "id": 18,
+        "name": "Borussia Mönchengladbach",
+        "shortName": "M'gladbach",
+        "tla": "BMG",
+        "address": "Hennes-Weisweiler-Allee 1 Mönchengladbach 41179",
+        "phone": "+49 (02161) 92930",
+        "website": "http://www.borussia.de",
+        "email": "info@borussia.de",
+        "founded": 1900,
+        "clubColors": "Black / White / Green",
+        "venue": null,
+        "squad": [
+            {
+                "id": 3176,
+                "name": "Matthias Ginter",
+                "position": "Defender",
+                "dateOfBirth": "1994-01-03T00:00:00Z",
+                "countryOfBirth": "Germany",
+                "nationality": "Germany",
+                "role": "PLAYER"
+            }
+        ],
+        "lastUpdated": "2018-05-31T12:49:47Z"
+    }
+    ```
 
-For the player:
+    For the player:
 
-```json
-{
-    "id": 44,
-    "name": "Cristiano Ronaldo",
-    "firstName": "Cristiano Ronaldo",
-    "lastName": null,
-    "dateOfBirth": "1985-02-05",
-    "countryOfBirth": "Portugal",
-    "nationality": "Portugal",
-    "position": "Attacker",
-    "lastUpdated": "2018-08-09T05:07:03Z"
-}
-```
+    ```json
+    {
+        "id": 44,
+        "name": "Cristiano Ronaldo",
+        "firstName": "Cristiano Ronaldo",
+        "lastName": null,
+        "dateOfBirth": "1985-02-05",
+        "countryOfBirth": "Portugal",
+        "nationality": "Portugal",
+        "position": "Attacker",
+        "lastUpdated": "2018-08-09T05:07:03Z"
+    }
+    ```
 
-This information must be returned by the GraphQL, but the structure, names and mechanisms used to fulfill it, is up to you.
+    This information must be returned by the GraphQL, but the structure, names, and mechanisms used to fulfill it are up to you.
 
 3. In the API, the [team](www.football-data.org/documentation/api#team) contains a property `squad` this is an array with the people that are involved in the team, but not just players, also trainers, etc. We are just interested in the players, so you can use the property `role` of each item of the `squad` to discriminate this. So your `Team` type must contain a `players` property instead of `squad`.
 
